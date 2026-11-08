@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="web_standard" name="shell-type"/>
+  <title>A Little Universe of Us — Scene 01</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-fixed": "#2c1600",
+            "primary-fixed-dim": "#dcc0bc",
+            "primary-fixed": "#f9dcd8",
+            "primary": "#ffe6e2",
+            "surface-container-high": "#252939",
+            "secondary-fixed-dim": "#cdc6ba",
+            "primary-container": "#e5c9c5",
+            "tertiary": "#ffe7d3",
+            "surface-tint": "#dcc0bc",
+            "on-secondary-container": "#beb7ac",
+            "error": "#ffb4ab",
+            "surface-variant": "#2f3444",
+            "surface-container-lowest": "#090e1c",
+            "on-tertiary": "#482904",
+            "on-primary-container": "#685350",
+            "on-tertiary-fixed-variant": "#623f18",
+            "outline-variant": "#4f4443",
+            "secondary-container": "#4d4940",
+            "tertiary-container": "#fac593",
+            "on-primary": "#3e2c2a",
+            "surface-bright": "#343949",
+            "surface-dim": "#0e1322",
+            "on-tertiary-container": "#765027",
+            "surface-container-highest": "#2f3444",
+            "on-error": "#690005",
+            "tertiary-fixed": "#ffdcbd",
+            "surface-container-low": "#161b2a",
+            "inverse-primary": "#6f5956",
+            "on-secondary-fixed": "#1e1b14",
+            "surface": "#0e1322",
+            "on-surface-variant": "#d2c3c1",
+            "on-primary-fixed": "#271816",
+            "error-container": "#93000a",
+            "on-secondary": "#343028",
+            "background": "#0e1322",
+            "on-secondary-fixed-variant": "#4b463e",
+            "outline": "#9b8e8c",
+            "surface-container": "#1a1f2e",
+            "on-primary-fixed-variant": "#56423f",
+            "secondary-fixed": "#e9e1d6",
+            "on-surface": "#dee2f7",
+            "secondary": "#cdc6ba",
+            "tertiary-fixed-dim": "#f0bd8b",
+            "inverse-surface": "#dee2f7",
+            "on-background": "#dee2f7",
+            "inverse-on-surface": "#2b3040",
+            "on-error-container": "#ffdad6"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "margin-mobile": "1.25rem",
+            "space-lg": "1.75rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem",
+            "margin-desktop": "4rem",
+            "gutter-mobile": "1rem",
+            "space-xl": "3rem",
+            "margin": "1.5rem",
+            "gutter-desktop": "2.5rem"
+          },
+          fontFamily: {
+            "ui-label-lg": ["DM Sans", "sans-serif"],
+            "meta-artifact": ["Courier Prime", "monospace"],
+            "body-sm": ["EB Garamond", "serif"],
+            "ui-label-md": ["DM Sans", "sans-serif"],
+            "title-editorial": ["EB Garamond", "serif"],
+            "body-lg": ["EB Garamond", "serif"],
+            "headline-sm": ["EB Garamond", "serif"],
+            "headline-md": ["EB Garamond", "serif"],
+            "body-md": ["EB Garamond", "serif"],
+            "display-hero-mobile": ["EB Garamond", "serif"],
+            "headline-lg-mobile": ["EB Garamond", "serif"],
+            "ui-label-sm": ["DM Sans", "sans-serif"],
+            "headline-lg": ["EB Garamond", "serif"],
+            "display-hero": ["EB Garamond", "serif"]
+          },
+          fontSize: {
+            "ui-label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "meta-artifact": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "ui-label-md": ["11px", { "lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600" }],
+            "title-editorial": ["20px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "body-lg": ["19px", { "lineHeight": "30px", "fontWeight": "400" }],
+            "headline-sm": ["22px", { "lineHeight": "30px", "fontWeight": "500" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "display-hero-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "0", "fontWeight": "400" }],
+            "ui-label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400" }]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .film-grain {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+    }
+  </style>
+
+  <style id="romantic-editorial-polish">
+    :root {
+      --love-cream: #eadbd3;
+      --love-blush: #d9b9b4;
+      --love-muted: #b8aaa7;
+      --love-ink: #11131d;
+    }
+
+    html { scroll-padding-top: 5rem; }
+    body {
+      background: #11131d;
+      color: var(--love-cream);
+      letter-spacing: .005em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: #d9b9b4; color: #211a1b; }
+
+    header {
+      background: rgba(17, 19, 29, .76) !important;
+      border-color: rgba(234, 219, 211, .10) !important;
+      box-shadow: 0 8px 30px rgba(0,0,0,.12) !important;
+    }
+
+    header > div { min-height: 68px; }
+    header nav a {
+      letter-spacing: .11em;
+      font-size: 10px;
+      opacity: .82;
+    }
+    header nav a:hover { opacity: 1; }
+
+    main { background: #11131d !important; }
+    main > div { isolation: isolate; }
+    .film-grain { opacity: .35; }
+
+    h1 {
+      text-wrap: balance;
+      text-shadow: 0 8px 40px rgba(0,0,0,.18);
+    }
+
+    #name-julian, #name-clara {
+      border-bottom: 1px solid rgba(217,185,180,.28);
+      padding-inline: .35rem;
+    }
+
+    #name-julian:focus, #name-clara:focus {
+      outline: none;
+      border-color: var(--love-blush);
+      background: rgba(217,185,180,.08);
+    }
+
+    #display-anniv-date { color: #eadbd3; }
+
+    #enter-btn {
+      background: #eadbd3 !important;
+      color: #282126 !important;
+      box-shadow: 0 8px 28px rgba(217,185,180,.13) !important;
+      letter-spacing: .14em;
+      padding-inline: 2rem;
+    }
+    #enter-btn:hover { background: #d9b9b4 !important; }
+
+    #film-prologue { scroll-margin-top: 5rem; }
+
+    #film-prologue > div:first-child {
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    #film-prologue .rounded-xl,
+    #film-prologue .rounded-lg {
+      border-color: rgba(234,219,211,.12) !important;
+      box-shadow: 0 18px 50px rgba(0,0,0,.16) !important;
+    }
+
+    #film-prologue img {
+      filter: saturate(.78) contrast(.96);
+      transition: transform .8s ease, filter .8s ease;
+    }
+    #film-prologue .relative:hover img {
+      transform: scale(1.035);
+      filter: saturate(.95) contrast(1);
+    }
+
+    #film-prologue h2,
+    #film-prologue h3,
+    #film-prologue h4 {
+      text-wrap: balance;
+    }
+
+    #film-prologue p {
+      line-height: 1.8;
+    }
+
+    aside {
+      background: rgba(30, 29, 38, .88) !important;
+      border-color: rgba(234,219,211,.14) !important;
+      box-shadow: 0 14px 45px rgba(0,0,0,.28) !important;
+      backdrop-filter: blur(22px);
+    }
+
+    footer {
+      background: #0c0e16 !important;
+      border-color: rgba(234,219,211,.10) !important;
+    }
+
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, a:focus-visible {
+      outline: 2px solid #d9b9b4;
+      outline-offset: 4px;
+    }
+
+    @media (min-width: 768px) {
+      .hero-cinematic { min-height: 780px; }
+    }
+
+    @media (max-width: 767px) {
+      header > div { min-height: 60px; }
+      header .font-headline-sm { font-size: 17px; }
+      main { padding-bottom: 9rem !important; }
+      main section:first-of-type { min-height: auto !important; padding-top: 2rem; padding-bottom: 2rem; }
+      h1 { font-size: clamp(2.7rem, 12vw, 4rem) !important; line-height: 1.05 !important; }
+      #film-prologue { padding-top: 2rem; }
+      #film-prologue > div:first-child { align-items: flex-start; }
+      aside {
+        bottom: 12px !important;
+        width: calc(100% - 24px) !important;
+        border-radius: 22px !important;
+        padding: 12px 16px !important;
+      }
+      aside > div { gap: 10px !important; }
+      footer { padding-bottom: 2rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+
+</head>
+
+<body class="bg-background font-body-md text-on-surface relative min-h-screen selection:bg-tertiary-container selection:text-on-tertiary-container">
+  <!-- Subtle Film Grain Overlay -->
+  <div class="pointer-events-none fixed inset-0 z-50 film-grain mix-blend-screen"></div>
+
+  <!-- Real Audio Element for Background Music -->
+  <audio id="audio-player" preload="auto"></audio>
+
+  <!-- Top Navigation Header -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-surface-container-low/80 backdrop-blur-md border-b border-surface-variant/40 shadow-[0_4px_30px_rgba(9,14,28,0.5)]">
+    <div class="h-16 max-w-[1360px] mx-auto px-margin md:px-margin-desktop flex items-center justify-between">
+      <div class="flex items-center gap-space-md">
+        <span class="font-headline-sm text-headline-sm text-primary tracking-wide">A Little Universe of Us</span>
+        <span class="hidden sm:inline-block w-px h-4 bg-outline-variant/40"></span>
+        <span class="hidden sm:inline-block font-meta-artifact text-meta-artifact text-tertiary-fixed-dim/90 uppercase tracking-widest">A STORY IN EIGHT PARTS</span>
+      </div>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden xl:flex items-center gap-space-md" data-active-classes="text-primary font-bold">
+        <a aria-current="page" class="font-ui-label-sm text-ui-label-sm uppercase tracking-widest text-primary font-bold transition-colors" href="scene-1.html">01 Origin</a>
+        <a class="font-ui-label-sm text-ui-label-sm uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" href="scene-2.html">02 Sound</a>
+        <a class="font-ui-label-sm text-ui-label-sm uppercase tracking-widest text-on-surface-variant hover:text-on-surface transition-colors" href="scene-3.html">03 Frames</a>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="flex items-center gap-space-sm md:gap-space-md">
+
+        <!-- Ambient Rain Toggle -->
+        <button id="rain-toggle-btn" aria-label="Ambient Rain Toggle" class="flex items-center gap-1.5 px-space-sm py-1 rounded bg-surface-container/50 hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors border border-outline-variant/30" type="button">
+          <span id="rain-icon" class="material-symbols-outlined text-[16px] text-tertiary-container">water_drop</span>
+          <span id="rain-text" class="font-meta-artifact text-meta-artifact hidden sm:inline text-secondary-fixed-dim">Rain sounds</span>
+        </button>
+
+        <!-- Mobile Drawer Menu Toggle -->
+        <button id="mobile-menu-btn" aria-label="Navigation Drawer" class="xl:hidden p-1.5 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors border border-outline-variant/30" type="button">
+          <span class="material-symbols-outlined text-[20px]">menu_open</span>
+        </button>
+
+        <!-- Profile / Favorite Person Avatar -->
+        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-md">
+          <span class="material-symbols-outlined text-on-primary text-[18px]">favorite</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu Modal -->
+    <div id="mobile-drawer" class="hidden xl:hidden bg-surface-container-high/95 backdrop-blur-xl border-b border-surface-variant px-margin py-space-md space-y-2">
+      <div class="grid grid-cols-2 gap-2 text-center font-meta-artifact text-xs">
+        <a class="p-2 rounded bg-surface-container text-primary font-bold border border-primary/20" href="scene-1.html">01 Origin</a>
+        <a class="p-2 rounded bg-surface-container/60 text-on-surface-variant hover:text-on-surface" href="scene-2.html">02 Sound</a>
+        <a class="p-2 rounded bg-surface-container/60 text-on-surface-variant hover:text-on-surface" href="scene-3.html">03 Frames</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Stage -->
+  <main class="w-full pt-16 pb-32 bg-surface">
+    <div class="flex flex-col w-full relative overflow-hidden select-none">
+      
+      <!-- Dynamic Cinematic Ambient Lighting & Dust Particle Field -->
+      <div class="absolute inset-0 pointer-events-none z-0">
+        <div class="absolute -top-40 left-1/4 w-[720px] h-[720px] rounded-full bg-gradient-to-br from-tertiary-fixed-dim/10 via-primary/5 to-transparent blur-[140px] animate-pulse"></div>
+        <div class="absolute top-1/3 -right-20 w-[540px] h-[540px] rounded-full bg-gradient-to-tl from-tertiary-container/10 via-primary-container/5 to-transparent blur-[120px]"></div>
+        <div class="absolute bottom-10 left-1/12 w-[600px] h-[600px] rounded-full bg-surface-container-high/40 blur-[160px]"></div>
+
+        <!-- Micro Constellation SVG Canvas Overlay -->
+        <svg class="w-full h-full opacity-65" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient cx="50%" cy="50%" id="starGlow" r="50%">
+              <stop offset="0%" stop-color="#ffe7d3" stop-opacity="0.9"></stop>
+              <stop offset="100%" stop-color="#ffe7d3" stop-opacity="0"></stop>
+            </radialGradient>
+          </defs>
+          <circle cx="12%" cy="18%" fill="#dee2f7" opacity="0.6" r="1"></circle>
+          <circle cx="18%" cy="14%" fill="#ffe7d3" opacity="0.8" r="1.5"></circle>
+          <circle cx="28%" cy="26%" fill="#dee2f7" opacity="0.4" r="1"></circle>
+          <circle cx="36%" cy="12%" fill="#ffe7d3" opacity="0.85" r="2"></circle>
+          <circle cx="48%" cy="22%" fill="#dee2f7" opacity="0.5" r="1"></circle>
+          <circle cx="62%" cy="16%" fill="#fac593" opacity="0.75" r="2.2"></circle>
+          <circle cx="71%" cy="29%" fill="#dee2f7" opacity="0.4" r="1.2"></circle>
+          <circle cx="84%" cy="19%" fill="#ffe7d3" opacity="0.8" r="1.8"></circle>
+          <circle cx="92%" cy="24%" fill="#dee2f7" opacity="0.55" r="1"></circle>
+          <circle cx="15%" cy="65%" fill="#ffe7d3" opacity="0.45" r="1.5"></circle>
+          <circle cx="24%" cy="78%" fill="#dee2f7" opacity="0.6" r="1"></circle>
+          <circle cx="41%" cy="85%" fill="#ffe7d3" opacity="0.7" r="2"></circle>
+          <circle cx="59%" cy="72%" fill="#dee2f7" opacity="0.5" r="1"></circle>
+          <circle cx="78%" cy="81%" fill="#fac593" opacity="0.65" r="1.5"></circle>
+          <circle cx="88%" cy="69%" fill="#dee2f7" opacity="0.4" r="1"></circle>
+          <!-- Delicately joined astrological segment line -->
+          <line stroke="#fac593" stroke-dasharray="3 3" stroke-opacity="0.15" x1="18%" x2="36%" y1="14%" y2="12%"></line>
+          <line stroke="#fac593" stroke-dasharray="2 4" stroke-opacity="0.12" x1="36%" x2="62%" y1="12%" y2="16%"></line>
+          <line stroke="#fac593" stroke-dasharray="3 3" stroke-opacity="0.15" x1="62%" x2="84%" y1="16%" y2="19%"></line>
+        </svg>
+      </div>
+
+      <!-- Hero Cinematic Section -->
+      <section class="relative z-10 w-full min-h-[880px] flex flex-col justify-between px-margin md:px-margin-desktop py-space-lg max-w-[1360px] mx-auto">
+        <!-- Top Editorial Header Strip -->
+        <div class="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md pt-space-xs">
+          <!-- Film Title & Slate Tag -->
+          <div class="flex items-center gap-space-sm">
+            <span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim shadow-[0_0_10px_rgba(240,189,139,0.8)]"></span>
+            <span class="font-meta-artifact text-meta-artifact uppercase tracking-[0.28em] text-tertiary-fixed-dim/90 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[13px] text-tertiary-container">star</span>
+              A LITTLE LOVE STORY
+            </span>
+            <span class="font-meta-artifact text-meta-artifact text-outline-variant/60">/</span>
+            <span class="font-meta-artifact text-meta-artifact text-secondary-fixed-dim/70 tracking-widest uppercase">OUR BEGINNING</span>
+          </div>
+
+          <!-- Live Ambient Status Pill -->
+          <div class="flex items-center gap-space-sm bg-surface-container-high/60 backdrop-blur-md px-space-md py-1.5 rounded-full shadow-[0_10px_30px_rgba(9,14,28,0.5)] border border-outline-variant/30">
+            <div id="hero-audio-indicator" class="flex items-center gap-1 h-3.5 px-0.5 opacity-60">
+              <span class="w-0.5 h-2.5 bg-tertiary-fixed-dim"></span>
+              <span class="w-0.5 h-3.5 bg-primary"></span>
+              <span class="w-0.5 h-1.5 bg-tertiary-fixed-dim"></span>
+              <span class="w-0.5 h-3 bg-primary"></span>
+            </div>
+            <span class="font-meta-artifact text-meta-artifact text-secondary-fixed tracking-wider">
+              ♫ NOW PLAYING: <span id="hero-sound-title" class="text-tertiary-fixed-dim">THE MIDNIGHT TAPE</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Centered Cinematic Title & Focal Composition -->
+        <div class="w-full my-auto py-space-xl flex flex-col items-center text-center">
+          <!-- Subtitle Archival Ribbon -->
+          <div class="inline-flex items-center gap-space-sm px-space-md py-1 rounded-full bg-surface-container-low/70 backdrop-blur-md mb-space-lg shadow-sm border border-outline-variant/20">
+            <span class="font-title-editorial italic text-secondary-fixed-dim text-body-sm tracking-wide">
+              A little story of two people.
+            </span>
+          </div>
+
+          <!-- Grand Master Title -->
+          <h1 class="font-display-hero text-headline-lg md:text-display-hero text-primary max-w-4xl tracking-tight leading-[1.08] mb-space-md">
+            Somewhere Between <br/>
+            <span class="italic font-display-hero font-light text-tertiary-fixed-dim tracking-normal">The Stars &amp; You</span>
+          </h1>
+
+          <!-- Editable Names & Milestones Badge -->
+          <div class="mt-space-sm flex flex-col items-center gap-space-md">
+            <div class="flex items-center justify-center gap-space-sm sm:gap-space-md text-headline-sm md:text-headline-md font-headline-md text-secondary-fixed">
+              <span class="cursor-text px-2 py-0.5 rounded hover:bg-surface-container-high/50 transition-colors focus:outline-none focus:bg-surface-container-high focus:text-primary" contenteditable="true" id="name-julian" spellcheck="false" title="Click to edit name">
+                Julian
+              </span>
+              <span class="font-meta-artifact text-tertiary-fixed-dim text-body-sm opacity-80">&amp;</span>
+              <span class="cursor-text px-2 py-0.5 rounded hover:bg-surface-container-high/50 transition-colors focus:outline-none focus:bg-surface-container-high focus:text-primary" contenteditable="true" id="name-clara" spellcheck="false" title="Click to edit name">
+                Clara
+              </span>
+            </div>
+
+            <!-- Archival Timepiece Badge -->
+            <button onclick="editMilestoneDate()" class="inline-flex items-center gap-space-sm px-space-md py-1.5 rounded-full bg-surface-container/70 hover:bg-surface-container transition-all shadow-[0_4px_24px_rgba(0,0,0,0.35)] border border-outline-variant/30 group" title="Click to edit start date">
+              <span class="material-symbols-outlined text-[15px] text-tertiary-fixed-dim group-hover:rotate-45 transition-transform">history_toggle_off</span>
+              <span class="font-meta-artifact text-meta-artifact text-secondary-fixed-dim tracking-widest uppercase">
+                SINCE <span id="display-anniv-date">OCTOBER 14, 2021</span> • <span class="text-tertiary-fixed-dim font-bold" id="counter-days">1,248</span> DAYS TOGETHER
+              </span>
+            </button>
+          </div>
+
+          <!-- Prologue Quote Box: Parisian Salon Atmosphere -->
+          <div class="mt-space-xl max-w-xl px-space-lg py-space-md rounded-xl bg-surface-container-low/40 backdrop-blur-md shadow-xl text-center relative border border-outline-variant/30">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center shadow-md">
+              <span class="material-symbols-outlined text-tertiary-fixed-dim text-[14px]">format_quote</span>
+            </div>
+            <p class="font-body-lg text-body-lg text-secondary-fixed-dim italic leading-relaxed pt-1">
+              “We were strangers who looked at the same moon until we looked at each other.”
+            </p>
+            <span class="block mt-space-xs font-meta-artifact text-meta-artifact text-outline uppercase tracking-widest">
+              A quiet night in Paris
+            </span>
+          </div>
+
+          <!-- Interactive Master CTA -->
+          <div class="mt-space-xl flex flex-col items-center gap-space-sm">
+            <a class="group relative inline-flex items-center gap-space-md px-space-xl py-3.5 rounded-full bg-primary text-on-primary font-ui-label-lg text-ui-label-lg uppercase tracking-[0.18em] transition-all duration-300 hover:scale-[1.02] shadow-[0_10px_35px_rgba(240,189,139,0.22),0_0_20px_rgba(229,201,195,0.25)] hover:bg-primary-container" href="#film-prologue" id="enter-btn">
+              <span>COME A LITTLE CLOSER</span>
+              <span class="material-symbols-outlined text-[18px] group-hover:translate-y-0.5 transition-transform duration-300">arrow_downward</span>
+            </a>
+            <span class="font-meta-artifact text-ui-label-sm uppercase tracking-[0.2em] text-outline pt-1">
+              A little story, made just for us
+            </span>
+          </div>
+        </div>
+
+        <!-- Quiet closing line -->
+        <div class="w-full flex justify-center pt-space-md">
+          <p class="font-title-editorial italic text-secondary-fixed-dim/75 text-lg md:text-xl">
+            Some nights stay with us a little longer.
+          </p>
+        </div>
+      </section>
+
+      <!-- Filmstrip Transition Vignette -->
+      <div class="w-full max-w-[1360px] mx-auto px-margin md:px-margin-desktop py-space-xl" id="film-prologue">
+        <!-- Section Introduction Label -->
+        <div class="flex items-center justify-between mb-space-lg">
+          <div class="flex items-center gap-space-sm">
+            <span class="font-meta-artifact text-meta-artifact text-tertiary-fixed-dim uppercase tracking-widest">A FEW MEMORIES</span>
+            <span class="font-meta-artifact text-meta-artifact text-outline-variant/50">/</span>
+            <span class="font-title-editorial text-title-editorial text-secondary-fixed">The Night It All Began</span>
+          </div>
+          <span class="font-meta-artifact text-meta-artifact text-outline">THREE LITTLE MEMORIES</span>
+        </div>
+
+        <!-- Editorial Asymmetrical Bento Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+          
+          <!-- Polaroid Memory 01 (Left Offset) -->
+          <div class="lg:col-span-5 bg-surface-container-low/70 rounded-xl p-space-md shadow-2xl backdrop-blur-md transform hover:-rotate-0.5 transition-transform duration-500 border border-outline-variant/30">
+            <div class="relative overflow-hidden rounded shadow-inner aspect-[4/3] mb-space-md bg-surface-container-high">
+              <img class="w-full h-full object-cover" alt="Foto Kenangan Pertama" src="rain.jpg"/>
+              <div class="absolute top-3 left-3 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-md border border-outline-variant/30">
+                <span class="font-meta-artifact text-meta-artifact text-tertiary-fixed-dim tracking-widest">OCT 14, 2021 • 01:14 AM</span>
+              </div>
+            </div>
+            <div class="flex items-start justify-between">
+              <div>
+                <h2 class="font-headline-sm text-headline-sm text-primary">The Corner of Saint-Louis</h2>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                  Neither of us brought an umbrella. You were laughing about a film neither of us had seen, and the fog felt like an entire country built just for us.
+                </p>
+              </div>
+              <button onclick="toggleTrack(0)" aria-label="Audio Note" class="p-2 rounded-full bg-surface-container-high text-tertiary-fixed-dim hover:text-primary transition-colors shadow-sm ml-2" type="button" title="Play café ambience">
+                <span class="material-symbols-outlined text-[18px]">graphic_eq</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: Micro Journal Excerpt & Soundcard -->
+          <div class="lg:col-span-7 flex flex-col gap-space-lg">
+            
+            <!-- Deep Night Note Slip -->
+            <div class="bg-surface-container/60 rounded-xl p-space-lg backdrop-blur-md shadow-xl relative overflow-hidden border border-outline-variant/30">
+              <div class="flex items-center justify-between mb-space-sm">
+                <span class="font-meta-artifact text-meta-artifact text-tertiary-fixed-dim uppercase tracking-wider">A NOTE FROM THAT NIGHT</span>
+                <span class="font-meta-artifact text-meta-artifact text-outline">KEPT CLOSE</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md text-primary mb-space-xs">
+                We agreed never to leave anything unspoken.
+              </h3>
+              <p class="font-body-lg text-body-lg text-secondary-fixed-dim leading-relaxed">
+                I remember checking the time on my grandfather’s watch—it had stopped at twelve thirty, and for a second I thought the world was actually holding its breath for us. You reached across the small cafe table and touched my sleeve.
+              </p>
+              <div class="mt-space-md pt-space-md flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low/50 p-space-md rounded-lg border border-outline-variant/20">
+                <div class="flex items-center gap-space-sm">
+                  <span class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary">
+                    <span class="material-symbols-outlined text-[18px]">favorite</span>
+                  </span>
+                  <div>
+                    <span class="block font-ui-label-lg text-ui-label-lg text-primary">Julian’s Pocket Journal</span>
+                    <span class="block font-meta-artifact text-meta-artifact text-outline">A little piece of that night</span>
+                  </div>
+                </div>
+                <span class="font-meta-artifact text-meta-artifact text-tertiary-fixed-dim bg-surface-container-high px-space-sm py-1 rounded">
+                  A memory to keep
+                </span>
+              </div>
+            </div>
+
+            <!-- Polaroid Memory 02 & Soundscape Card Mosaic -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+              <!-- Secondary Artifact Photo -->
+              <div class="bg-surface-container-low/70 rounded-xl p-space-sm shadow-xl backdrop-blur-md hover:rotate-1 transition-transform duration-500 border border-outline-variant/30">
+                <div class="relative overflow-hidden rounded aspect-[4/3] mb-space-sm bg-surface-container-high">
+                  <img class="w-full h-full object-cover" alt="cassete" src="coffee.jpg"/>
+                </div>
+                <span class="block font-meta-artifact text-meta-artifact text-secondary-fixed-dim px-1">
+                  The first cassette you made
+                </span>
+              </div>
+
+              <!-- Interactive Acoustic Reel Badge -->
+              <div class="bg-surface-container-high/50 rounded-xl p-space-md shadow-xl flex flex-col justify-between backdrop-blur-md border border-outline-variant/30">
+                <div>
+                  <div class="flex items-center justify-between mb-space-xs">
+                    <span class="font-meta-artifact text-meta-artifact text-tertiary-fixed-dim uppercase tracking-wider">A SONG WE REMEMBER</span>
+                    <button onclick="toggleTrack(1)" class="material-symbols-outlined text-tertiary-fixed-dim text-[18px] hover:text-primary transition-colors">album</button>
+                  </div>
+                  <h4 class="font-title-editorial text-title-editorial text-primary">Rain by the Window</h4>
+                  <p class="font-meta-artifact text-meta-artifact text-outline mt-1">Playing through an open window at 3:15 AM</p>
+                </div>
+
+                <!-- Interactive Audio Scrubber Indicator -->
+                <div class="mt-space-md">
+                  <div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden mb-2 cursor-pointer" onclick="seekAudio(event)">
+                    <div id="acoustic-meter-fill" class="bg-tertiary-fixed-dim h-full w-0 rounded-full transition-all duration-150"></div>
+                  </div>
+                  <div class="flex items-center justify-between font-meta-artifact text-meta-artifact text-outline">
+                    <span id="acoustic-current-time">00:00</span>
+                    <span id="acoustic-status-badge" class="text-tertiary-fixed-dim font-bold">READY</span>
+                    <span id="acoustic-total-time">04:32</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Intimate Nocturnal Reflection Footer Divider -->
+      <section class="w-full py-space-xl relative z-10 flex flex-col items-center justify-center text-center px-margin">
+        <div class="w-12 h-px bg-tertiary-fixed-dim/30 mb-space-md"></div>
+        <span class="font-meta-artifact text-meta-artifact text-tertiary-fixed-dim tracking-[0.25em] uppercase mb-space-xs">
+          THE BEGINNING
+        </span>
+        <p class="font-title-editorial italic text-secondary-fixed text-headline-sm max-w-md">
+          Next: Scene 02 — The Sound of Us
+        </p>
+        <a class="mt-space-md inline-flex items-center gap-space-xs font-ui-label-lg text-ui-label-lg text-primary hover:text-tertiary-fixed-dim transition-colors uppercase tracking-widest" href="scene-2.html">
+          <span>Listen to our song</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Floating Cinematic Audio Dock Player Bar -->
+  <aside class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-[92%] max-w-[960px] bg-surface-container-high/90 backdrop-blur-xl rounded-full shadow-[0_20px_50px_-10px_rgba(212,163,115,0.15),0_0_30px_-5px_rgba(229,201,195,0.1)] px-space-md py-space-sm border border-outline-variant/40">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-space-xs sm:gap-space-md">
+      
+      <!-- Player Controls & Current Song Metadata -->
+      <div class="flex items-center gap-space-sm w-full sm:w-auto justify-between sm:justify-start">
+        <div class="flex items-center gap-space-xs">
+          <button onclick="prevTrack()" aria-label="Previous Track" class="p-1 text-on-surface-variant hover:text-primary transition-colors" type="button">
+            <span class="material-symbols-outlined text-[18px]">skip_previous</span>
+          </button>
+          
+          <button id="floating-play-btn" onclick="togglePlayPause()" aria-label="Play or Pause" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary hover:bg-primary-container transition-transform hover:scale-105 shadow-md" type="button">
+            <span id="play-pause-icon" class="material-symbols-outlined text-[18px]">play_arrow</span>
+          </button>
+          
+          <button onclick="nextTrack()" aria-label="Next Track" class="p-1 text-on-surface-variant hover:text-primary transition-colors" type="button">
+            <span class="material-symbols-outlined text-[18px]">skip_next</span>
+          </button>
+        </div>
+
+        <div class="flex flex-col cursor-pointer" onclick="togglePlayPause()">
+          <span id="dock-track-title" class="font-meta-artifact text-meta-artifact text-tertiary-fixed-dim tracking-wider truncate max-w-[210px] md:max-w-xs">
+            No. 01 — Midnight Café Ambience
+          </span>
+          <span id="dock-track-subtitle" class="font-ui-label-sm text-ui-label-sm text-outline tracking-widest uppercase">
+            A little music for us
+          </span>
+        </div>
+      </div>
+
+      <!-- Navigation Scene Indicator Dots -->
+      <div class="flex items-center gap-2">
+        <a class="w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-primary/40 hover:scale-125 transition-all" href="scene-1.html" title="Scene 01: The Beginning"></a>
+        <a class="w-2.5 h-2.5 rounded-full bg-surface-variant hover:bg-secondary transition-colors hover:scale-125" href="scene-2.html" title="Scene 02: The Sound of Us"></a>
+        <a class="w-2.5 h-2.5 rounded-full bg-surface-variant hover:bg-secondary transition-colors hover:scale-125" href="scene-3.html" title="Scene 03: Frames of Us"></a>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- Deep Nocturnal Footer -->
+  <footer class="w-full bg-surface-container-lowest py-space-xl border-t border-surface-variant/30">
+    <div class="max-w-[1360px] mx-auto px-margin md:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-space-md text-center md:text-left">
+      <div class="flex flex-col gap-1">
+        <span class="font-title-editorial text-title-editorial text-primary tracking-wide">A Little Universe of Us</span>
+        <p class="font-meta-artifact text-meta-artifact text-on-surface-variant">
+          A few memories from the nights that became ours.
+        </p>
+      </div>
+      <div class="flex items-center gap-space-lg">
+        <span class="font-meta-artifact text-meta-artifact text-secondary-fixed-dim/70">MADE WITH LOVE</span>
+        <span class="font-meta-artifact text-meta-artifact text-outline">© MMXXVI</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT: Real Audio Player, Rain Noise Generator, Dynamic Days & Persistence -->
+  <script>
+    /* ==============================================================
+       1. LIVE MIDNIGHT CLOCK
+       ============================================================== */
+    function updateClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      const mins = String(now.getMinutes()).padStart(2, '0');
+      const secs = String(now.getSeconds()).padStart(2, '0');
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+      const clockStr = `${String(hours).padStart(2, '0')}:${mins}:${secs} ${ampm} • MIDNIGHT`;
+      const clockEl = document.getElementById('live-clock');
+      if (clockEl) clockEl.textContent = clockStr;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    /* ==============================================================
+       2. EDITABLE NAMES & ANNIVERSARY DATE PERSISTENCE
+       ============================================================== */
+    const nameJulianEl = document.getElementById('name-julian');
+    const nameClaraEl = document.getElementById('name-clara');
+    let savedStartDate = localStorage.getItem('universe_anniversary_date') || '2021-10-14';
+
+    if (nameJulianEl) {
+      nameJulianEl.textContent = localStorage.getItem('universe_name_julian') || 'Julian';
+      nameJulianEl.addEventListener('blur', () => {
+        localStorage.setItem('universe_name_julian', nameJulianEl.textContent.trim());
+      });
+    }
+
+    if (nameClaraEl) {
+      nameClaraEl.textContent = localStorage.getItem('universe_name_clara') || 'Clara';
+      nameClaraEl.addEventListener('blur', () => {
+        localStorage.setItem('universe_name_clara', nameClaraEl.textContent.trim());
+      });
+    }
+
+    function calculateDays() {
+      const startDate = new Date(savedStartDate + 'T00:00:00');
+      const now = new Date();
+      const diffTime = Math.max(0, now - startDate);
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      
+      const counterEl = document.getElementById('counter-days');
+      if (counterEl) counterEl.textContent = diffDays.toLocaleString();
+
+      const displayAnniv = document.getElementById('display-anniv-date');
+      if (displayAnniv) {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        displayAnniv.textContent = startDate.toLocaleDateString('en-US', options).toUpperCase();
+      }
+    }
+    calculateDays();
+
+    function editMilestoneDate() {
+      const input = prompt("Enter your relationship start date (YYYY-MM-DD):", savedStartDate);
+      if (input && !isNaN(new Date(input).getTime())) {
+        savedStartDate = input;
+        localStorage.setItem('universe_anniversary_date', savedStartDate);
+        calculateDays();
+      }
+    }
+
+    /* ==============================================================
+       3. AMBIENT RAIN SOUND (Web Audio API Synthesizer)
+       ============================================================== */
+    let rainAudioCtx = null;
+    let rainSource = null;
+    let rainGain = null;
+    let isRainPlaying = false;
+
+    function toggleRain() {
+      const rainBtnText = document.getElementById('rain-text');
+      const rainIcon = document.getElementById('rain-icon');
+
+      if (!isRainPlaying) {
+        startRainSound();
+        isRainPlaying = true;
+        if (rainBtnText) rainBtnText.textContent = "Rain sounds on";
+        if (rainIcon) rainIcon.classList.add('text-primary');
+      } else {
+        stopRainSound();
+        isRainPlaying = false;
+        if (rainBtnText) rainBtnText.textContent = "Rain sounds";
+        if (rainIcon) rainIcon.classList.remove('text-primary');
+      }
+    }
+
+    function startRainSound() {
+      try {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        rainAudioCtx = new AudioContextClass();
+
+        // Pink/brown noise generator buffer for soft realistic rain
+        const bufferSize = rainAudioCtx.sampleRate * 2;
+        const noiseBuffer = rainAudioCtx.createBuffer(1, bufferSize, rainAudioCtx.sampleRate);
+        const output = noiseBuffer.getChannelData(0);
+        let b0 = 0, b1 = 0, b2 = 0;
+        for (let i = 0; i < bufferSize; i++) {
+          const white = Math.random() * 2 - 1;
+          b0 = 0.99886 * b0 + white * 0.0555179;
+          b1 = 0.99332 * b1 + white * 0.0750759;
+          b2 = 0.96900 * b2 + white * 0.1538520;
+          output[i] = (b0 + b1 + b2) * 0.12;
+        }
+
+        rainSource = rainAudioCtx.createBufferSource();
+        rainSource.buffer = noiseBuffer;
+        rainSource.loop = true;
+
+        // Low-pass filter to sound like gentle rain outside the window
+        const filter = rainAudioCtx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.value = 1000;
+
+        rainGain = rainAudioCtx.createGain();
+        rainGain.gain.setValueAtTime(0.3, rainAudioCtx.currentTime);
+
+        rainSource.connect(filter);
+        filter.connect(rainGain);
+        rainGain.connect(rainAudioCtx.destination);
+
+        rainSource.start();
+      } catch (e) {
+        console.warn("Rain audio not supported:", e);
+      }
+    }
+
+    function stopRainSound() {
+      if (rainSource) {
+        try { rainSource.stop(); } catch (e) {}
+      }
+      if (rainAudioCtx) {
+        try { rainAudioCtx.close(); } catch (e) {}
+      }
+    }
+
+    const rainToggleBtn = document.getElementById('rain-toggle-btn');
+    if (rainToggleBtn) {
+      rainToggleBtn.addEventListener('click', toggleRain);
+    }
+
+    /* ==============================================================
+       4. CINEMATIC MUSIC PLAYER DOCK
+       ============================================================== */
+    const songs = [
+      {
+        title: "The 1975 - fallingforyou",
+        subtitle: "Soft café sounds • Late night",
+        src: "The 1975 - fallingforyou.mp3"
+      },
+      {
+        title: "HONNE - by my side",
+        subtitle: "Gentle rain • Night ambience",
+        src: "HONNE - by my side.mp3"
+      }
+    ];
+
+    let currentSongIndex = 0;
+    const audioPlayer = document.getElementById('audio-player');
+    const playPauseIcon = document.getElementById('play-pause-icon');
+    const dockTrackTitle = document.getElementById('dock-track-title');
+    const dockTrackSubtitle = document.getElementById('dock-track-subtitle');
+    const heroSoundTitle = document.getElementById('hero-sound-title');
+    const heroAudioIndicator = document.getElementById('hero-audio-indicator');
+    const acousticFill = document.getElementById('acoustic-meter-fill');
+    const acousticCurrentTime = document.getElementById('acoustic-current-time');
+    const acousticTotalTime = document.getElementById('acoustic-total-time');
+    const acousticStatusBadge = document.getElementById('acoustic-status-badge');
+
+    function loadSong(index) {
+      currentSongIndex = index;
+      const song = songs[currentSongIndex];
+      audioPlayer.src = song.src;
+      dockTrackTitle.textContent = song.title;
+      dockTrackSubtitle.textContent = song.subtitle;
+      if (heroSoundTitle) heroSoundTitle.textContent = song.title.split('—')[1] || song.title;
+    }
+    loadSong(0);
+
+    function togglePlayPause() {
+      if (audioPlayer.paused) {
+        audioPlayer.play().then(() => {
+          playPauseIcon.textContent = 'pause';
+          dockTrackSubtitle.textContent = 'Now playing';
+          if (acousticStatusBadge) acousticStatusBadge.textContent = 'PLAYING';
+          if (heroAudioIndicator) heroAudioIndicator.classList.remove('opacity-60');
+        }).catch(err => console.log('Playback error:', err));
+      } else {
+        audioPlayer.pause();
+        playPauseIcon.textContent = 'play_arrow';
+        dockTrackSubtitle.textContent = 'Paused';
+        if (acousticStatusBadge) acousticStatusBadge.textContent = 'PAUSED';
+        if (heroAudioIndicator) heroAudioIndicator.classList.add('opacity-60');
+      }
+    }
+
+    function toggleTrack(idx) {
+      if (currentSongIndex === idx && !audioPlayer.paused) {
+        togglePlayPause();
+      } else {
+        loadSong(idx);
+        togglePlayPause();
+      }
+    }
+
+    function nextTrack() {
+      loadSong((currentSongIndex + 1) % songs.length);
+      togglePlayPause();
+    }
+
+    function prevTrack() {
+      loadSong((currentSongIndex - 1 + songs.length) % songs.length);
+      togglePlayPause();
+    }
+
+    // Audio progress updates
+    audioPlayer.ontimeupdate = () => {
+      if (audioPlayer.duration) {
+        const pct = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        if (acousticFill) acousticFill.style.width = pct + '%';
+
+        const curMin = Math.floor(audioPlayer.currentTime / 60);
+        const curSec = String(Math.floor(audioPlayer.currentTime % 60)).padStart(2, '0');
+        if (acousticCurrentTime) acousticCurrentTime.textContent = `${curMin}:${curSec}`;
+
+        const durMin = Math.floor(audioPlayer.duration / 60);
+        const durSec = String(Math.floor(audioPlayer.duration % 60)).padStart(2, '0');
+        if (acousticTotalTime) acousticTotalTime.textContent = `${durMin}:${durSec}`;
+      }
+    };
+
+    audioPlayer.onended = () => {
+      nextTrack();
+    };
+
+    function seekAudio(e) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const pct = clickX / rect.width;
+      if (audioPlayer.duration) {
+        audioPlayer.currentTime = pct * audioPlayer.duration;
+      }
+    }
+
+    // Spacebar keyboard shortcut to Play/Pause
+    window.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA' && !e.target.isContentEditable) {
+        e.preventDefault();
+        togglePlayPause();
+      }
+    });
+
+    /* ==============================================================
+       5. MOBILE DRAWER MENU & SMOOTH SCROLL
+       ============================================================== */
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('hidden');
+      });
+    }
+
+    // Smooth scroll for hero CTA
+    const enterBtn = document.getElementById('enter-btn');
+    if (enterBtn) {
+      enterBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.getElementById('film-prologue');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+  </script>
+</body>
+</html>
